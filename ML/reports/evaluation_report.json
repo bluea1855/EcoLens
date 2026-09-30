@@ -1,0 +1,109 @@
+{
+  "dataset_summary": {
+    "dataset_name": "THULab/air-quality",
+    "num_rows": 87672,
+    "num_columns": 11,
+    "columns": [
+      "time",
+      "pm25",
+      "pm10",
+      "no2",
+      "co",
+      "so2",
+      "o3",
+      "temp",
+      "rh",
+      "wind",
+      "rain"
+    ],
+    "time_range": {
+      "start": "2015-01-01 00:00:00",
+      "end": "2024-12-31 23:00:00"
+    },
+    "locations_stations": 1,
+    "duplicate_rows": 0,
+    "missing_counts": {
+      "time": 0,
+      "pm25": 0,
+      "pm10": 0,
+      "no2": 0,
+      "co": 0,
+      "so2": 0,
+      "o3": 0,
+      "temp": 0,
+      "rh": 0,
+      "wind": 0,
+      "rain": 0
+    },
+    "missing_pcts": {
+      "time": 0.0,
+      "pm25": 0.0,
+      "pm10": 0.0,
+      "no2": 0.0,
+      "co": 0.0,
+      "so2": 0.0,
+      "o3": 0.0,
+      "temp": 0.0,
+      "rh": 0.0,
+      "wind": 0.0,
+      "rain": 0.0
+    }
+  },
+  "split_info": {
+    "total_rows": 87642,
+    "train": {
+      "rows": 61349,
+      "start": "2015-01-02 00:00:00",
+      "end": "2022-01-01 04:00:00"
+    },
+    "validation": {
+      "rows": 13146,
+      "start": "2022-01-01 05:00:00",
+      "end": "2023-07-02 22:00:00"
+    },
+    "test": {
+      "rows": 13147,
+      "start": "2023-07-02 23:00:00",
+      "end": "2024-12-31 17:00:00"
+    }
+  },
+  "validation_metrics": [
+    {
+      "model": "Persistence Baseline",
+      "mae": 24.2751,
+      "rmse": 37.5991,
+      "r2": 0.0599,
+      "mape": 63.55
+    },
+    {
+      "model": "Random Forest",
+      "mae": 16.6005,
+      "rmse": 25.5983,
+      "r2": 0.5642,
+      "mape": 48.89
+    },
+    {
+      "model": "HistGradientBoosting",
+      "mae": 16.2161,
+      "rmse": 24.9899,
+      "r2": 0.5847,
+      "mape": 47.16
+    },
+    {
+      "model": "XGBoost",
+      "mae": 16.2092,
+      "rmse": 24.7408,
+      "r2": 0.5929,
+      "mape": 47.74
+    }
+  ],
+  "selected_model": "XGBoost",
+  "final_test_metrics": {
+    "model": "XGBoost (Test Set)",
+    "mae": 17.3525,
+    "rmse": 28.4428,
+    "r2": 0.5456,
+    "mape": 49.05
+  },
+  "saved_model_path": "models/pm25_forecaster.joblib"
+}
